@@ -11,7 +11,7 @@
 }
 
 :root{
-    --dayWhite: #fff;
+    --dayWhite: #fffdd0;
     --dayText: #000;
 }
 .darkTheme{
@@ -20,7 +20,7 @@
 }
 
 .utcBody{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -126,9 +126,6 @@
     font-size: 20px;
 }
 
-.utcBody .output h4{
-    margin: 5px;
-}
 .utcBody .output h4 p{
     display: inline;
     font-weight: normal;
