@@ -11,7 +11,7 @@
 }
 
 :root{
-    --dayWhite: #fffdd0;
+    --dayWhite: #f6f6f6;
     --dayText: #000;
 }
 .darkTheme{
@@ -20,13 +20,13 @@
 }
 
 .utcBody{
-    /* border: 2px solid red; */
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
     padding: 5px;
     border-radius: 5px;
     background: var(--dayWhite);
+    box-shadow: 0px 5px 5px #ddd;
 }
 
 .utcBody .titleBar {
