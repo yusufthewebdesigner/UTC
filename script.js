@@ -2,12 +2,18 @@ let utcBody = document.querySelector('.utcBody')
 
 let hourInp = document.querySelector('.inputTime .hour')
 let minuteInp = document.querySelector('.inputTime .minute')
+
 let newQuestion = document.querySelector('.inputQsn .newQsn')
 let assignReview = document.querySelector('.inputQsn .assignReview')
+
 let paymentPerHourInp = document.querySelector('.paymentPerHourInp')
 let paymentPerQuestionInp = document.querySelector('.paymentPerQuestionInp')
+let paidPaymentInp = document.querySelector('.paidPaymentInp')
+
 let paymentPerHourOut = document.querySelector('.paymentPerHourOut')
 let paymentPerQuestionOut = document.querySelector('.paymentPerQuestionOut')
+let paidPaymentPerHourOut = document.querySelector('.paidPaymentPerHourOut')
+let paidPaymentPerQuestionOut = document.querySelector('.paidPaymentPerQuestionOut')
 
 let calculate = document.querySelector('.calculation')
 let clear = document.querySelector('.clearance')
@@ -103,6 +109,16 @@ calculate.onclick = function (e) {
         } else {
             paymentPerQuestionOut.innerText =
                 `${(totalQuestion.innerText * paymentPerQuestionInp.value).toFixed(0)} BDT`
+        }
+
+        if (paidPaymentInp.value === "") {
+            paidPaymentPerHourOut.innerText = "Provide Payment Data."
+            paidPaymentPerQuestionOut.innerText = "Provide Payment Data."
+        } else {
+            paidPaymentPerQuestionOut.innerText =
+                `${(totalQuestion.innerText * paymentPerQuestionInp.value).toFixed(0)} BDT`
+            paidPaymentPerHourOut.innerText = `${(paidPaymentInp.value / totalHourResult).toFixed(2)} BDT`
+            paidPaymentPerQuestionOut.innerText = `${(paidPaymentInp.value / totalQsn).toFixed(2)} BDT`
         }
     }
 }
