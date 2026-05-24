@@ -99,26 +99,33 @@ calculate.onclick = function (e) {
         // payment Section
         if (paymentPerHourInp.value === "") {
             paymentPerHourOut.innerText = "Provide Payment Data."
+            paymentPerHourOut.style.fontWeight = "normal";
         } else {
             paymentPerHourOut.innerText =
                 `${(totalHourResult * paymentPerHourInp.value).toFixed(0)} BDT`
+            paymentPerHourOut.style.fontWeight = "bold";
         }
 
         if (paymentPerQuestionInp.value === "") {
             paymentPerQuestionOut.innerText = "Provide Payment Data."
+            paymentPerQuestionOut.style.fontWeight = "normal";
         } else {
             paymentPerQuestionOut.innerText =
                 `${(totalQuestion.innerText * paymentPerQuestionInp.value).toFixed(0)} BDT`
+            paymentPerQuestionOut.style.fontWeight = "bold";
+
         }
 
         if (paidPaymentInp.value === "") {
             paidPaymentPerHourOut.innerText = "Provide Payment Data."
             paidPaymentPerQuestionOut.innerText = "Provide Payment Data."
+            paidPaymentPerHourOut.style.fontWeight = "normal";
+            paidPaymentPerQuestionOut.style.fontWeight = "normal";
         } else {
-            paidPaymentPerQuestionOut.innerText =
-                `${(totalQuestion.innerText * paymentPerQuestionInp.value).toFixed(0)} BDT`
             paidPaymentPerHourOut.innerText = `${(paidPaymentInp.value / totalHourResult).toFixed(2)} BDT`
             paidPaymentPerQuestionOut.innerText = `${(paidPaymentInp.value / totalQsn).toFixed(2)} BDT`
+            paidPaymentPerHourOut.style.fontWeight = "bold";
+            paidPaymentPerQuestionOut.style.fontWeight = "bold";
         }
     }
 }
