@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udvash Time Calculation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="utcBody">
+        <form action="">
+            <div class="titleBar">
+                <h3 class="heading">Udvash Time Calculation</h3>
+                <div class="darkLight">
+                    <i class="bi bi-moon-fill" id="darkLightIcon"></i>
+                </div>
+            </div>
+
+            <div class="inputTime">
+                <div class="effectiveHour">
+                    <label for="Hour">Effective Hours:</label>
+                    <input type="number" class="hour" placeholder="Hour" value="80">
+                </div>
+                <div class="effectiveMinute">
+                    <label for="minute">Effective Minutes:</label>
+                    <input type="number" class="minute" placeholder="Minute" value="52">
+                </div>
+            </div>
+
+            <div class="inputQsn">
+                <div class="newqsn">
+                    <label for="New Question">New Questions:</label>
+                    <input type="number" class="newQsn" placeholder="New Question Count" value="566">
+                </div>
+                <div class="assignedReview">
+                    <label for="Assigned Review">Assigned Reviews:</label>
+                    <input type="number" class="assignReview" placeholder="Assigned Review Question Count" value="196">
+                </div>
+            </div>
+
+            <div class="payment">
+                <div class="paymentPerHour">
+                    <label for="paymentPerHour">Payment Per Hour:</label>
+                    <input type="number" class="paymentPerHourInp" placeholder="Payment Per Houe" value="160">
+                </div>
+                <div class="paymentPerQuestion">
+                    <label for="payment Per Question">Payment Per Question:</label>
+                    <input type="number" class="paymentPerQuestionInp" placeholder="payment Per Question" value="17">
+                </div>
+            </div>
+
+            <div class="actionButton">
+                <input type="submit" value="Calculate" class="calculation">
+                <input type="button" value="Clear" class="clearance">
+            </div>
+        </form>
+
+        <div class="output">
+            <div class="dataOkay">
+                <div class="timemanagement">
+                    <h3>Time Management</h3>
+                    <h4>Total Hour: <p><span id="mainNum" class="totalHour">0.0</span> (<span
+                                class="totalHourDetail_H">0</span>
+                            hours
+                            and
+                            <span class="totalHourDetail_M">00</span> minutes)
+                        </p>
+                    </h4>
+                    <h4>Total Question: <span id="mainNum" class="totalQuestion">00</span></h4>
+                    <h4>Average Time: <p><span id="mainNum" class="averageTime">0.0</span> (<span
+                                class="averageTimeDetail_M">0</span>
+                            minutes
+                            <span class="averageTimeDetail_S">00</span> seconds)
+                        </p>
+                    </h4>
+                    <h4 class="suggestionTitle">Suggestion: <p class="suggestion"></p>
+                    </h4>
+                </div>
+                <div class="paymentOutput">
+                    <h3>Payment</h3>
+                    <h4>Payment in Terms of Hour: <span class="paymentPerHourOut">00</span></h4>
+                    <h4>Payment in Terms of Question: <span class="paymentPerQuestionOut">00</span></h4>
+                </div>
+            </div>
+            <div class="dataNotOkay">
+                <h2 class="dataNotOkayMessage">Please provide required data.</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
