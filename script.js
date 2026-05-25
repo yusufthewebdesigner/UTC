@@ -31,6 +31,7 @@ let suggestion = document.querySelector('.suggestion')
 
 let output = document.querySelector('.output')
 let dataOkay = document.querySelector('.dataOkay')
+let todayDate = document.querySelector('.date')
 let dataNotOkay = document.querySelector('.dataNotOkay')
 
 calculate.onclick = function (e) {
@@ -50,6 +51,12 @@ calculate.onclick = function (e) {
         dataOkay.style.display = "block"
         dataNotOkay.style.display = "none"
 
+        let today = new Date()
+        today.setDate(today.getDate() - 1)
+        let day = String(today.getDate()).padStart(2, '0')
+        let month = String(today.getMonth() + 1).padStart(2, '0')
+        let year = String(today.getFullYear())
+        todayDate.innerText = `${day}-${month}-${year}`
 
         let hours = Number(hourInp.value)
         let minutes = Number(minuteInp.value)
