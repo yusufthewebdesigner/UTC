@@ -60,7 +60,7 @@ calculate.onclick = function (e) {
 
         let hours = Number(hourInp.value)
         let minutes = Number(minuteInp.value)
-        let totalMinute = hours * 60 + minutes
+        let totalMinute = (hours * 60) + minutes
 
         // Output Hour
         let totalHourResult = totalMinute / 60
@@ -76,13 +76,12 @@ calculate.onclick = function (e) {
         let avg = totalMinute / Number(totalQuestion.innerText)
         let min = Math.floor(avg)
         let sec = Math.round((avg - min) * 60)
-
         averageTime.innerText = avg.toFixed(2)
         averageTimeDetail_M.innerText = min
         averageTimeDetail_S.innerText = sec
 
         // Suggestion
-        let current_avg_sec = (min * 60) + sec
+        let current_avg_sec = avg * 60
         let target_avg_sec = (6 * 60) + 55
         let totalQsn = Number(totalQuestion.innerText)
         let due_sec_perQsn = target_avg_sec - current_avg_sec
