@@ -81,15 +81,14 @@ calculate.onclick = function (e) {
         averageTimeDetail_S.innerText = sec
 
         // Suggestion
-        let current_avg_sec = avg * 60
-        let target_avg_sec = (6 * 60) + 55
-        let totalQsn = Number(totalQuestion.innerText)
-        let due_sec_perQsn = target_avg_sec - current_avg_sec
-        let total_due_sec = due_sec_perQsn * totalQsn
+        let totalCoveredSec = ((hours * 60) + minutes) * 60
+        let requiredCoveredSec = ((6 * 60) + 55) * totalQuestion.innerText
+
+        let total_due_sec = requiredCoveredSec - totalCoveredSec
         let total_due_min = total_due_sec / 60
         let total_due_hour = total_due_sec / 3600
 
-        if (due_sec_perQsn > 0) {
+        if (total_due_sec > 0) {
             suggestion.innerText = `You need extra ${total_due_hour.toFixed(2)} hours (${total_due_min.toFixed(0)} minutes) to reach target average time 6:55`
 
             suggestionTitle.style = "color: green"
@@ -129,7 +128,7 @@ calculate.onclick = function (e) {
             paidPaymentPerQuestionOut.style.fontWeight = "normal";
         } else {
             paidPaymentPerHourOut.innerText = `${(paidPaymentInp.value / totalHourResult).toFixed(2)} BDT`
-            paidPaymentPerQuestionOut.innerText = `${(paidPaymentInp.value / totalQsn).toFixed(2)} BDT`
+            paidPaymentPerQuestionOut.innerText = `${(paidPaymentInp.value / Number(totalQuestion.innerText)).toFixed(2)} BDT`
             paidPaymentPerHourOut.style.fontWeight = "bold";
             paidPaymentPerQuestionOut.style.fontWeight = "bold";
         }
@@ -144,6 +143,7 @@ clear.onclick = function () {
     assignReview.value = ""
     paymentPerHourInp.value = ""
     paymentPerQuestionInp.value = ""
+    paidPaymentInp.value = ""
 }
 
 // darkLight
@@ -186,4 +186,3 @@ darkLightIcon.onclick = function () {
         localStorage.setItem('theme', 'light');
     }
 };
-
